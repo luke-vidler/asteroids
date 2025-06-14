@@ -39,6 +39,12 @@ def main():
         # Update all updatable objects
         updatable.update(dt)
 
+        # Check for collisions
+        for asteroid in asteroids:
+            if player.check_collision(asteroid):
+                print("Game over!")
+                return
+
         # Draw everything
         screen.fill(("black"))
         for sprite in drawable:
