@@ -49,6 +49,13 @@ def main():
             if player.check_collision(asteroid):
                 print("Game over!")
                 return
+            
+            # Check bullet collisions
+            for shot in shots:
+                if asteroid.check_collision(shot):
+                    asteroid.split()  # This will handle creating smaller asteroids
+                    shot.kill()
+                    break  # Break after first collision to avoid multiple hits
 
         # Draw everything
         screen.fill(("black"))
