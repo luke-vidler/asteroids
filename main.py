@@ -19,7 +19,7 @@ def main():
     shots = pygame.sprite.Group()
     
     # Create player and add to groups
-    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, shots)
     updatable.add(player)
     drawable.add(player)
 
